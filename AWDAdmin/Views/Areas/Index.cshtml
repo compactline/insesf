@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AWDAdmin.Models.Area>
+
+@{
+    ViewBag.Title = "Áreas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- /.panel-heading -->
+<div class="panel-body">
+    <button class="btn btn-success new" data-controller="Areas">Nova Área <i class="glyphicon glyphicon-new-window"></i> </button>
+
+    <div class="dataTable_wrapper">
+        <table class="table table-striped table-bordered table-hover table-responsive" id="dataTable">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descricao)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+                    <tbody>
+            
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
+                        <td>
+                            <button class="btn btn-danger delete" data-id="@item.Id" data-controller="Areas"><i class="glyphicon glyphicon-trash"></i></button>
+                            <button class="btn btn-primary edit" data-id="@item.Id" data-controller="Areas"><i class="glyphicon glyphicon-edit"></i></button>
+
+                        </td>
+                    </tr>
+                }
+                </tbody>
+
+        </table>
+    </div>
+</div>
+
+<div class="modal" id="modalAreas">
+
+</div>

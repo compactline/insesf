@@ -1,0 +1,48 @@
+﻿@using Site.Models
+@{
+    Aluno aluno = (Aluno)Session["Aluno"];
+}
+
+<section class="team" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="team-heading text-center">
+                <h2 style="margin-top:190px">Inscrição</h2>
+                
+            </div>
+            <div class="col-md-12">
+                <div id="myTabContent" class="tab-content"></div>
+<div class="col-md-12 col-sm-8">
+    
+    @using (Html.BeginForm("Confirmar", "Inscricao", FormMethod.Post, new { id = "confirmarForm"}))
+                    {
+        @Html.AntiForgeryToken()
+    <div class="contentform">
+        <p>
+            <h4>@aluno.Nome, confirme sua inscrição no curso @Session["TituloCurso"]!  </h4>
+        </p>
+        <div class="col-md-10">
+            <div class="col-md-4">
+                <button type="submit" id="btConfirmar"  class="bouton-contact">Confirmar?</button>
+                <div id="loading" style="display:none">
+                    Direcionando para o pagamento, aguarde...
+                </div>
+            </div>
+        
+        </div>
+        </div>
+        }
+
+    </div>
+
+            </div>
+            </div>
+        </div>
+    </section>
+<script>
+    $(function () {
+        $("#btConfirmar").click(function () {
+            $("#loading").show();
+        })
+    })
+</script>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Cursos";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<section class="team" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="team-heading text-center">
+                <h2 style="margin-top:190px">+Cursos</h2>
+                <h4>Encontre um curso de curta duração para agregar mais conhecimento em sua carreira profissional ou acadêmica. Sempre temos um curso ideal para cada necessidade. Confira!</h4>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <a href="@Url.Action("Detalhe","Cursos",new{id=@item.Codigo})">
+                            <div class="col-md-2 single-member col-sm-4 maiscursos">
+                                <div class="person">
+                                    <img class="img-responsive" src="@item.Capa" height="234" width="234" alt="member-1">
+                                </div>
+                                <div class="person-detail">
+                                    <div class="arrow-bottom"></div>
+                                    <h3>@item.Titulo</h3>
+                                    <p>@item.Descricao.Substring(0, 150) ... saiba mais</p>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                </div>
+                <div class="col-md-12" style="margin-top:20px">
+                    <h3 style="font-size:27px">Avaliação e Certificado:</h3>
+                    <p style="text-align:justify; font-size:17px;">  Somente os alunos aprovados têm direito ao certificado. A avaliação será realizada pela presença. Sendo considerado aprovado o aluno que apresentar mínimo de 75% de presença. O Certificado será gratuito e estará disponível até 15 (quinze) dias após a data final do curso. Os certificados são impressos em papel especial, registrados internamente, contendo o conteúdo programático, distribuição da carga horária, número de registro, CNPJ da instituição e assinatura do responsável.</p>
+                    <p style="text-align:justify; font-size:17px;" ><b>   * Curso Legalizado, conforme artigo 205 e 206 da Constituição Federal, Lei nº 9.394, e Decreto Presidencial nº 5.154 de 23 de julho de 2004 e as normas da Resolução CNE nº 04/99 – MEC (art. 7º, § 3º) de 7 de outubro de 1999.</b></p>
+                    <p style="text-align:justify; font-size:17px;">  O certificado tem validade nacional para fins curriculares e em provas de títulos, como certificado de atualização/aperfeiçoamento, respeitando a carga-horária descrita e não podendo ser usado para outros fins. Por isso, destacamos que NÃO é um certificado técnico profissionalizante ou de graduação ou de pós-graduação e não dá direito de assumir responsabilidades técnicas. </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section><!-- end of team section -->

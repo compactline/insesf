@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AWDAdmin.Models.Curso>
+
+@{
+    ViewBag.Title = "Cursos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <button class="btn btn-success new"  data-controller="Cursos">Novo Curso <i class="glyphicon glyphicon-new-window"></i> </button>
+                
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover table-responsive" id="dataTableCursos">
+                       @Html.Partial("_List")
+                    </table>
+                </div>
+            </div>
+     
+
+<div class="modal" id="modalCursos" data-controller="Cursos">
+
+</div>
+
+<div class="modal" id="modalModulos" data-controller="Modulos">
+
+</div>
+<div class="modal" id="modalDisciplinas" data-controller="Disciplinas">
+
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+        $(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+            var tab = $(e.target);
+            var contentId = tab.attr("href");
+            var id = tab.data("curso");
+            var dest = $(tab).data("dest");
+            if (dest == "modulos") {
+                $("#modulos").html($("#carrregando").html());
+                $("#modulos").load("Modulos/Index?curso=" + id);
+            }
+            else if (dest == "disciplinas") {
+                $("#disciplinas").html($("#carrregando").html());
+                $("#disciplinas").load("Disciplinas/Index?curso=" + id);
+            }
+        });
+
+    </script>
+}
+

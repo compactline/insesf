@@ -1,0 +1,152 @@
+﻿@model AWDAdmin.Models.Aluno
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = null;
+}
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        @using (Ajax.BeginForm("Delete", "Alunos", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "modal", LoadingElementId = "loading", OnSuccess = "$.validator.unobtrusive.parse('form');" }))
+        {
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Remover Aluno</h4>
+            </div>
+             
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model=>model.ID)
+            <div class="modal-body">
+                <div class="row">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Nome)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.NomeGenitora)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.NomeGenitora)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DataNascimento)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DataNascimento)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Endereco)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Endereco)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Bairro)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Bairro)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CEP)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CEP)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.UF)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.UF)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Cidade)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Cidade)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Telefone)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Telefone)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.CPF)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.CPF)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RG)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.RG)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Observacao)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Observacao)
+                        </dd>
+
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.DataCadastro)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DataCadastro)
+                        </dd>
+
+                    </dl>
+                    <div class="warning">
+                        <div id="loading" style="display:none">
+                            <img src="~/Content/default.svg" />
+                        </div>
+
+                        @ViewBag.Mensagem
+                    </div>
+                
+
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Remover" class="btn btn-primary" />
+                <input type="button" value="Cancelar" class="btn btn-default" data-dismiss="modal" />
+            </div>
+        }
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

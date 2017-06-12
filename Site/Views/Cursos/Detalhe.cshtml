@@ -1,0 +1,82 @@
+﻿@model Site.Models.Curso
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    ul {
+        font-size:18px;
+    }
+
+</style>
+
+<section class="team" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="team-heading text-center">
+                <h2 style="margin-top:190px">Detalhes</h2>
+                <h4>Todas as informações detalhas, para auxiliar a sua tomanda de decisão. </h4>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4 single-member col-sm-4 maiscursos">
+                    <div class="person">
+                        <img class="img-responsive" src="@Model.Capa" alt="member-1">
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <h3 id="titleCurso">@Model.Titulo</h3>
+                    <ul>
+                        <li>
+                            <p class="text-justify text">
+                                <span id="sub">Cód. Curso:&nbsp;</span>@Model.Codigo
+                            </p>
+                        </li>
+                        <li>
+                        <p class="text-justify text"> 
+                            <span id="sub">Descrição:&nbsp;</span>
+                            @Model.Descricao
+                        </p>
+                        </li>
+                        <li>
+                            <p class="text-justify text"><span id="sub">Ementa:&nbsp;</span>  @Model.Ementa </p>
+                        </li>
+                        <li><p class="text-justify text"><span id="sub">Carga Horária:&nbsp;</span>
+                             @Model.CargaHoraria</p></li>
+                        <li><p class="text-justify text"><span id="sub">Datas Início e Término:&nbsp;</span>
+                             @Model.DataInicio.ToString("dd/MM/yyyy") até @Model.DataConclusao.ToString("dd/MM/yyyy")</p></li>
+                        <li><p class="text-justify text"><span id="sub">Horário:&nbsp;</span> 
+                            @Model.Horario</p></li>
+                        <li><p class="text-justify text"><span id="sub">Quant. Inscritos:&nbsp;</span> 
+                            @ViewBag.NumeroInscritos / @Model.Vagas</p></li>
+                        <li><p class="text-justify text"><span id="sub">Professor:&nbsp;</span> 
+                            @Model.NomeProfessor </p></li>
+                        <li><p class="text-justify text"><span id="sub">Coordenador:&nbsp;</span> 
+                             @Model.NomeCoordenador</p></li>
+                        
+                        <li><p class="text-justify text"><span id="sub">Local para o Curso:&nbsp;</span>
+                             @Model.Local</p></li>
+                        <li><p class="text-justify text"><span id="sub">Investimento:&nbsp;</span> 
+                            @Model.Investimento</p></li>
+
+                    </ul>
+
+                    <div class="col-md-12 col-sm-12"> 
+                        @using (Html.BeginForm("Index", "Inscricao", FormMethod.Post, new { id = "matForm"}))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.Hidden("id",Model.Codigo)
+                        <h3 style="font-size:22px; background-color:#42B3E5; padding:10px; width:50%; border-radius:20px; float:right; box-shadow: 1px 3px 5px 0 #ccc;">
+                            <a href="#" onclick="document.getElementById('matForm').submit()" title="Fazer Inscrição">
+                                <span style="color:#fff; margin-left: 19px;">
+                                    Fazer Inscrição
+                                </span>
+                            </a>
+                        </h3>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- end of team section -->

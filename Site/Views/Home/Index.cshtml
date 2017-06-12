@@ -1,0 +1,283 @@
+﻿
+<section class="slider" id="home">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="header-backup"></div>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" style="margin-top:100px;" role="listbox">
+                    <div class="item active">
+                        <img src="~/img/slide-three.jpg" alt="">
+                        <div class="carousel-caption">
+                            <h1>Treinamentos</h1>
+                            <p>Capacitação e treinamento empresarial.</p>
+                            <a href="#about"><button>Ver mais</button></a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="~/img/slide-four.jpg" alt="">
+                        <div class="carousel-caption">
+                            <h1>Carreira</h1>
+                            <p>Invista em sua carreira, e mostre seu diferencial no mercado!</p>
+                            <a href="#about"><button>Ver mais</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carouselHacked" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carouselHacked" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section><!-- end of slider section -->
+<!-- about section -->
+<section class="about text-center" id="about">
+    <div class="container">
+        <div class="row">
+            <h2>Cursos</h2>
+            <h4>Aqui você encontra os melhores cursos para agregar valor à sua profissão, e disparar na concorrência do mercado de trabalho!</h4>
+            @foreach (var item in ViewBag.cursos)
+                {
+            <a href="/Cursos/Detalhe/@item.Codigo">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-about-detail clearfix">
+                        <div class="about-img">
+                            <img src="@item.Capa" alt="">
+                        </div>
+
+                        <div class="about-details">
+                            <div class="pentagon-text">
+                                <h1>@item.Titulo.Substring(0, 1)</h1>
+                            </div>
+
+                            <h3>@item.Titulo</h3>
+                            <p>@item.Descricao.Substring(0, 150)... saiba mais</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            }
+            <div class="col-md-12 col-sm-12"> 
+            <h3 style="font-size:22px; background-color:#42B3E5; padding:10px; width:30%; border-radius:20px; float:right; box-shadow: 1px 3px 5px 0 #ccc;"><a href="/Cursos"><span style="color:#fff;">Ver Todos os Cursos</span></a></h3></div>
+
+        </div>
+    </div>
+</section><!-- end of about section -->
+<!-- service section starts here -->
+
+<section class="service text-center" id="service">
+    <div class="container">
+        <div class="row">
+            <h2>Eventos</h2>
+            <h4>Descrição detalha dos serviços prestados em relação aos eventos</h4>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="single-service">
+                    <div class="single-service-img">
+                        <div class="service-img">
+                            <img class="img-responsive" src="~/img/service1.png" alt="">
+                        </div>
+                    </div>
+                    <h3>Palestras</h3>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="single-service">
+                    <div class="single-service-img">
+                        <div class="service-img">
+                            <img class="img-responsive" src="~/img/Redondas.jpg" alt="">
+                        </div>
+                    </div>
+                    <h3>Mesas Redondas</h3>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="single-service">
+                    <div class="single-service-img">
+                        <div class="service-img">
+                            <img class="img-responsive" src="~/img/Conversas.jpg" alt="">
+                        </div>
+                    </div>
+                    <h3>Rodas de Conversas</h3>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="single-service">
+                    <div class="single-service-img">
+                        <div class="service-img">
+                            <img class="img-responsive" src="~/img/Congressos.jpg" alt="">
+                        </div>
+                    </div>
+                    <h3>Simpósios e Congressos</h3>
+                </div>
+            </div>
+            <div class="col-md-11" style="padding:20px">
+                <p style="font-size:20px; color:#fff; text-align:justify">Os eventos tem como características reunir especialistas de renome em torno de um tema de interesse geral. Temos moderadores para as diversas temáticas e audiência altamente selecionada.</p>
+                <p style="font-size:20px; color:#fff; text-align:justify">Tomamos as providências para a realização do evento desejado com participação das comissões organizadoras.</p>
+                <div class="col-md-6" style="float:left; color:#fff; font-size:20px; text-align:left;">
+                    <ul>
+                        <li>Definição de local; </li>
+                        <li>Definição dos especialistas (são pagos);</li>
+                        <li>Definição do público-alvo (o público paga para assistir ao Simpósio);</li>
+                        <li>Elaboração do programa;</li>
+                        <li>Confecção de material de apoio: convite/ programa/ pastas/ papel/ caneta/fichas de inscrição/recibo/certificado;</li>
+                        <li>Definição de coffee-break/almoço/coquetel e outros;</li>
+                        <li>Redação e impressão ou gravação dos ANAIS;</li>
+                        <li>Confecção de material promocional: anúncios/ faixas/ cartazes/brindes e outros;</li>
+                        <li>Equipe de assessoria de imprensa;</li>
+                        <li>Equipes de apoio: secretárias, digitadores, recepcionistas de tradução simultânea, de audiovisuais, telefone, sala de imprensa, mestre de cerimônia e outros a combinar.</li>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section><!-- end of service section -->
+<!-- team section -->
+<!--
+<section class="team" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="team-heading text-center">
+                <h2>Equipe</h2>
+
+                <h4>Conheça quem faz a AWD Cursos e Eventos se tornar a lider no mercado Sergipano.</h4>
+            </div>
+
+            <div class="col-md-2 single-member col-sm-4">
+                <div class="person">
+                    <img class="img-responsive" src="~/img/avatar.jpg" alt="member-1">
+                </div>
+
+                <div class="person-detail">
+                    <div class="arrow-bottom"></div>
+                    <h3>Nome do Colaborador</h3>
+                    <p>Descrição datalhada da função na empresa, formação academica e títulos.</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-2 single-member col-sm-4">
+
+                <div class="person-detail">
+                    <div class="arrow-top"></div>
+                    <h3>Nome do Colaborador</h3>
+                    <p>Descrição datalhada da função na empresa, formação academica e títulos. </p>
+                </div>
+                <div class="person">
+                    <img class="img-responsive" src="~/img/avatar.jpg" alt="member-2">
+                </div>
+            </div>
+            <div class="col-md-2 single-member col-sm-4">
+                <div class="person">
+                    <img class="img-responsive" src="~/img/avatar.jpg" alt="member-3">
+                </div>
+                <div class="person-detail">
+                    <div class="arrow-bottom"></div>
+                    <h3>Nome do Colaborador</h3>
+                    <p>Descrição datalhada da função na empresa, formação academica e títulos. </p>
+                </div>
+            </div>
+
+            <div class="col-md-2 single-member col-sm-4">
+                <div class="person-detail">
+                    <div class="arrow-top"></div>
+                    <h3>Nome do Colaborador</h3>
+                    <p>Descrição datalhada da função na empresa, formação academica e títulos.</p>
+                </div>
+                <div class="person">
+                    <img class="img-responsive" src="~/img/avatar.jpg" alt="member-4">
+                </div>
+            </div>
+
+            <div class="col-md-2 single-member col-sm-4">
+                <div class="person">
+                    <img class="img-responsive" src="~/img/avatar.jpg" alt="member-5">
+                </div>
+
+                <div class="person-detail">
+                    <div class="arrow-bottom"></div>
+                    <h3>Nome do Colaborador</h3>
+                    <p>Descrição datalhada da função na empresa, formação academica e títulos.</p>
+                </div>
+            </div>
+
+            <div class="col-md-2 single-member col-sm-4">
+
+                <div class="person-detail">
+                    <div class="arrow-top"></div>
+                    <h3>Nome do Colaborador</h3>
+                    <p>Descrição datalhada da função na empresa, formação academica e títulos.</p>
+                </div>
+                <div class="person">
+                    <img class="img-responsive" src="~/img/avatar.jpg" alt="member-5">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!-- end of team section -->
+    
+-->
+<!-- map section -->
+<section class="api-map" id="contact">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 map" id="map"></div>
+        </div>
+    </div>
+</section><!-- end of map section -->
+<!-- contact section starts here -->
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-caption clearfix">
+                <div class="contact-heading text-center">
+                    <h2>Contato</h2>
+                </div>
+
+                <div class="col-md-5 contact-info text-left">
+                    <h3>Mais Informações:</h3>
+                    <div class="info-detail">
+
+                        <ul><li style="line-height:10px;"><i class="fa fa-map-marker"></i><span>Endereço:</span> Empresarial Atlântico Sul <br>- Av. Mário Jorge, 2020 Coroa do Meio | Aracaju - SE </li></ul>
+                        <ul style="margin-top:28px;"><li><i class="fa fa-phone"></i><span>Whatsapp:</span> (79) 9-9653.5307 </li></ul>
+                        <ul><li><i class="fa fa-fax"></i><span>Telefone:</span> (79) 9-8829.3013</li></ul>
+                        <ul><li><i class="fa fa-envelope"></i><span>Email:</span> contato@awdcursos.com.br</li></ul>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-md-offset-1 contact-form">
+                    <h3>Tire suas dúvidas ou sugestões!</h3>
+                    @using (Ajax.BeginForm("Contato", "Home", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "showmessage" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <input class="name" type="text" name="nome" placeholder="Nome">
+                        <input class="email" type="email" name="email" placeholder="Email">
+                        <input class="phone" type="text" name="telefone" placeholder="Telefone:">
+                        <textarea class="message" name="mensagem" id="message" cols="30" rows="10" placeholder="Messagem"></textarea>
+                        <input class="submit-btn" type="submit" value="ENVIAR">
+    <div id="showmessage">
+    </div>
+                    }
+                    
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!-- end of contact section -->

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Acesso";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<section class="team" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="team-heading text-center">
+                <h2 style="margin-top:190px">Acesso</h2>
+            </div>
+            <div class="col-md-12">
+
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane active in col-md-4" id="login">
+                        <form class="form-horizontal" action='/Home/Acesso' method="POST" autocomplete="off">
+                            <fieldset id="com_cadastro">
+                                <div id="legend">
+                                    <legend class="user-login"><span style="margin-left:8px;">@ViewBag.Mensagem </span></legend>
+                                </div>
+                                <div class="control-group">
+                                    <!-- Username -->
+                                    <label class="control-label" for="username">Insira seu E-mail</label>
+                                    <div class="controls">
+                                        <input type="Email" id="username" name="Email" placeholder="" class="input-xlarge">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <!-- Password-->
+                                    <label class="control-label" for="password">Senha</label>
+                                    <div class="controls">
+                                        <input type="password" id="passwordLogin" name="Senha" placeholder="" class="input-xlarge">
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <!-- Button -->
+                                    <div class="controls" id="logar">
+                                        <button type="submit" class="btn btn-success" style="font-size:16px; letter-spacing:3px; float:right;">Acessar!</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</section><!-- end of team section -->

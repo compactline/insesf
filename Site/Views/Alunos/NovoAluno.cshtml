@@ -1,0 +1,214 @@
+﻿@model Site.Models.Aluno
+
+@{
+    ViewBag.Title = "Novo Aluno";
+    Layout = "~/Views/Shared/_Layout_sem_menu.cshtml";
+}
+<!-- team section -->
+<section class="team" id="team">
+    <div class="container">
+        <div class="row">
+            <div class="team-heading text-center">
+                <h2 style="margin-top:50px">Inscrição</h2>
+                <h4>Para mais segurança e comodidade. Realize sua incrição e pagamento completamente online!  </h4>
+            </div>
+            <div class="col-md-12">
+
+                <div id="myTabContent" class="tab-content">
+
+                    <div class="col-md-8 col-sm-8">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true, "", new { @class = "validation" })
+
+                        @Html.AntiForgeryToken()
+                            <h1>Não tem cadastro? Preencha seu formulário e pronto! É Rápido!!!  </h1>
+                            <div class="contentform">
+                                @if (ViewBag.Mensagem != null)
+                                {
+                                    <div id='sendmessage' class='show'> @ViewBag.Mensagem </div>
+                                }
+                                <div class="leftcontact">
+                                    <div class="form-group">
+                                        <p>Curso:<b> @Session["TituloCurso"]</b></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div>@Html.ValidationMessageFor(model => model.NomeGenitora, "", new { @class = "validation" })</div>
+    
+                                        <p>Nome da Mãe<span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-male"></i></span>
+                                         @Html.EditorFor(model => model.NomeGenitora)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "validation" })
+                                        <p>Nome do Aluno<span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-user"></i></span>
+                                        @Html.EditorFor(model => model.Nome)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "validation" })
+                                        <p>Data Nascimento<span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-user"></i></span>
+                                        @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @id = "DataNascimento" } })
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "validation" })
+                                        <p>E-mail <span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+                                        @Html.EditorFor(model => model.Email)
+                                        
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "validation" })
+                                        <p>Endereço<span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                                        @Html.EditorFor(model => model.Endereco)
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "validation" })
+                                        <p>Bairro<span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                                        @Html.EditorFor(model => model.Bairro)
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "validation" })
+                                        <p>CEP <span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                                        @Html.EditorFor(model => model.CEP, new { htmlAttributes = new { @id = "cep" } })
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "validation" })
+                                        <p>Senha para acesso a sua Matrícula <span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                                        @Html.PasswordFor(model => model.Senha, new { required = "required" })
+										<p style="float: left;"><span>*</span> Sem limites de caracteres.</p>
+                                        
+                                    </div>
+
+                                </div>
+
+                                <div class="rightcontact">
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "validation" })
+                                        <p>Cidade <span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-building-o"></i></span>
+                                        @Html.EditorFor(model => model.Cidade)
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.UF, "", new { @class = "validation" })
+                                        <p>Estado<span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+                                        @Html.EditorFor(model => model.UF, new { htmlAttributes = new { @id = "uf" } })
+                                        
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "validation" })
+                                        <p>Telefone <span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-phone"></i></span>
+                                        @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @id = "telefone" } })
+                                        
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.CPF, "", new { @class = "validation" })
+                                        <p>CPF <span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-info"></i></span>
+                                        @Html.EditorFor(model => model.CPF,new { htmlAttributes = new { @id="cpf" } })
+                                        
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.RG, "", new { @class = "validation" })
+                                        <p>RG <span>*</span></p>
+                                        <span class="icon-case"><i class="fa fa-info"></i></span>
+                                        @Html.EditorFor(model => model.RG)
+                                        
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        @Html.ValidationMessageFor(model => model.Observacao, "", new { @class = "validation" })
+                                        <p>Observações<span></span></p>
+                                        <span class="icon-case"><i class="fa fa-comments-o"></i></span>
+                                        @Html.TextAreaFor(model => model.Observacao)
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="bouton-contact enviar" id="enviar">Enviar</button>
+
+                    }
+                    
+                    </div>
+                    <div class="tab-pane active in col-md-4" id="login">
+                        <form class="form-horizontal" action='/Home/Acesso' method="POST" autocomplete="off">
+                            <fieldset id="com_cadastro">
+                                <div id="legend">
+                                    <legend class="user-login"><span style="margin-left:8px;">Se já possui cadastro? </span></legend>
+                                </div>
+                                <div class="control-group">
+                                    <!-- Username -->
+                                    <label class="control-label" for="username">Insira seu E-mail</label>
+                                    <div class="controls">
+                                        <input type="Email" id="username" name="Email" placeholder="" class="input-xlarge">
+                                    </div>
+                                </div>
+
+                                <div class="control-group">
+                                    <!-- Password-->
+                                    <label class="control-label" for="password">Senha</label>
+                                    <div class="controls">
+                                        <input type="password" id="passwordLogin" name="Senha" placeholder="" class="input-xlarge">
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group">
+                                    <!-- Button -->
+                                    <div class="controls" id="logar">
+                                        <button type="submit" class="btn btn-success enviar" style="font-size:16px; letter-spacing:3px; float:right;">Acessar!</button>
+                                        <div id="loading" style="display:none">
+                                            Aguarde...
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</section><!-- end of team section -->
+    
+@Scripts.Render("~/bundles/jqueryval")
+
+
+<script src="~/Scripts/jquery.mask.js"></script>
+
+<script>
+    $(function () {
+        $("#cpf").mask("999.999.999-99");
+        $("#telefone").mask("(99)9-9999-9999");
+        $("#DataNascimento").mask("99/99/9999");
+        $("#cep").mask("99.999-999");
+        $('#uf').mask('SS');
+        $(".enviar").click(function () {
+            $("#loading").show();
+        });
+    });
+</script>

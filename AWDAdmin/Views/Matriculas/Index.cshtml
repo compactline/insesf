@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Matrículas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    @using (Ajax.BeginForm("GetDados", "Matriculas", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "dataTable", LoadingElementId = "loading", OnSuccess = "$.validator.unobtrusive.parse('form');" }, new {@class="form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+    <div class="form-group">
+
+        <input name="NomeAluno" value="" class="form-control" placeholder="Nome do Aluno" />
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-4">
+            @Html.DropDownList("IDCurso", null, htmlAttributes: new { @class = "form-control", @placeholder = "Curso" })
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Procurar" class="btn btn-default" />
+    </div>
+
+
+    } 
+</div>
+<div class="warning">
+    <div id="loading" style="display:none">
+        <img src="~/Content/default.svg" />
+    </div>
+
+    @ViewBag.Mensagem
+</div>
+<table id="dataTable" class="table table-striped">
+
+</table>

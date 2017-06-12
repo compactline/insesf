@@ -1,0 +1,36 @@
+﻿@model AWDAdmin.Models.Curso
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+
+
+
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        @using (Ajax.BeginForm("Edit", "Cursos", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "modal", LoadingElementId = "loading", OnSuccess = "$.validator.unobtrusive.parse('form');" }))
+        {
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Editar Curso</h4>
+            </div>
+             
+            @Html.AntiForgeryToken()
+ 
+            <div class="modal-body">
+
+                <div class="form-horizontal">
+                    
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.ID)
+                    @Html.Partial("_FormCurso",Model)
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+                <input type="button" value="Cancelar" class="btn btn-default" data-dismiss="modal" />
+            </div>
+        }
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

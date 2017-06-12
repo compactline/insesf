@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AWDAdmin.Models.Curso>
+
+<thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vagas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataConclusao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Horario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InicioInscricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FimInscricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+
+    @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Codigo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Titulo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Vagas)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataInicio)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataConclusao)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Horario)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.InicioInscricao)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FimInscricao)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Valor)
+
+                                    (@Html.DisplayFor(modelItem => item.Investimento))
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger delete" data-id="@item.ID" data-controller="Cursos"><i class="glyphicon glyphicon-trash"></i></button>
+                                    <button class="btn btn-primary edit" data-id="@item.ID" data-controller="Cursos"><i class="glyphicon glyphicon-edit"></i></button>
+
+                                </td>
+                            </tr>
+                            }
+</tbody>

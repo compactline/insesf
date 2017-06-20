@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -262,7 +263,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\pagseguro\dotnet-master\source\Uol.PagSeguro\Uol.PagSeguro.csproj">
+    <ProjectReference Include="..\..\Pagseguro\source\Uol.PagSeguro\Uol.PagSeguro.csproj">
       <Project>{babc5658-6afd-4f8e-81f1-434553663d99}</Project>
       <Name>Uol.PagSeguro</Name>
     </ProjectReference>

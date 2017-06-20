@@ -35,10 +35,8 @@ namespace AWDAdmin.Models
         public string CargaHoraria { get; set; }
 
         [Display(Name = "Professor")]
-        [Required]
         public string NomeProfessor { get; set; }
         [Display(Name = "Coordenador")]
-        [Required]
         public string NomeCoordenador { get; set; }
         [Required]
         public int Vagas{ get; set; }
@@ -71,6 +69,22 @@ namespace AWDAdmin.Models
             ApplyFormatInEditMode = true,
             NullDisplayText = "Valor")]
         public Decimal Valor { get; set; }
+
+        [ForeignKey("Area")]
+        public System.Nullable<Int32> Area_Id { get; set; }
+
+        public virtual Area Area { get; set; }
+
+        [ForeignKey("Coordenador")]
+        public System.Nullable<Int32> Coordenador_Id { get; set; }
+
+        public virtual Coordenador Coordenador { get; set; }
+
+        [ForeignKey("Professor")]
+        public System.Nullable<Int32> Professor_Id { get; set; }
+
+        public virtual Professor Professor  { get; set; }
+
 
         public ICollection<Modulo> Modulos { get; set; }
     }

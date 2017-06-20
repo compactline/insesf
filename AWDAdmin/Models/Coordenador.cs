@@ -15,6 +15,12 @@ namespace AWDAdmin.Models
 
         public string Curriculo { get; set; }
 
+        public virtual string Nome {
+            get
+            {
+                return this.Pessoa.Nome;
+            }}
+
         [ForeignKey("Pessoa")]
         [Column("Pessoa_Id")]
         public Int32 PessoaId { get; set; }

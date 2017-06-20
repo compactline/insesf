@@ -21,5 +21,10 @@ namespace AWDAdmin.Models
 
         public virtual Modulo Modulo { get; set; }
 
+        [ForeignKey("Professor")]
+        public Int32 Professor_Id { get; set; }
+
+        public virtual Professor Professor { get; set; }
+
     }
 }

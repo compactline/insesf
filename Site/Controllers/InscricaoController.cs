@@ -23,7 +23,7 @@ namespace Site.Controllers
         public async Task<ActionResult> Index(string id)
         {
 
-            if (Session["IdCurso"] == null || (id!=null && id != Session["IdCurso"]) )
+            if (Session["IdCurso"] == null || (id!=null && !id.Equals(Session["IdCurso"]) ) )
             {
                 if (id == null)
                 {

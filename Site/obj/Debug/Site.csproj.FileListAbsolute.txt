@@ -41,3 +41,40 @@ C:\Users\Aroaldo\OneDrive\Documentos\Projetos\Projeto Cursos\AWDCursos\Site\bin\
 C:\Users\Aroaldo\OneDrive\Documentos\Projetos\Projeto Cursos\AWDCursos\Site\obj\Debug\Site.csprojResolveAssemblyReference.cache
 C:\Users\Aroaldo\OneDrive\Documentos\Projetos\Projeto Cursos\AWDCursos\Site\obj\Debug\Site.dll
 C:\Users\Aroaldo\OneDrive\Documentos\Projetos\Projeto Cursos\AWDCursos\Site\obj\Debug\Site.pdb
+C:\Desenv\ReposGit\insesf\Site\obj\Debug\Site.csprojResolveAssemblyReference.cache
+C:\Desenv\ReposGit\insesf\Site\obj\Debug\Site.dll
+C:\Desenv\ReposGit\insesf\Site\obj\Debug\Site.pdb
+C:\Desenv\ReposGit\insesf\Site\bin\Site.dll.config
+C:\Desenv\ReposGit\insesf\Site\bin\Site.dll
+C:\Desenv\ReposGit\insesf\Site\bin\Site.pdb
+C:\Desenv\ReposGit\insesf\Site\bin\Antlr3.Runtime.dll
+C:\Desenv\ReposGit\insesf\Site\bin\CryptSharp.dll
+C:\Desenv\ReposGit\insesf\Site\bin\EntityFramework.dll
+C:\Desenv\ReposGit\insesf\Site\bin\EntityFramework.SqlServer.dll
+C:\Desenv\ReposGit\insesf\Site\bin\Microsoft.Web.Infrastructure.dll
+C:\Desenv\ReposGit\insesf\Site\bin\Newtonsoft.Json.dll
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Helpers.dll
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Mvc.dll
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Optimization.dll
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Razor.dll
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.WebPages.Deployment.dll
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.WebPages.dll
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.WebPages.Razor.dll
+C:\Desenv\ReposGit\insesf\Site\bin\Uol.PagSeguro.dll
+C:\Desenv\ReposGit\insesf\Site\bin\WebGrease.dll
+C:\Desenv\ReposGit\insesf\Site\bin\Uol.PagSeguro.pdb
+C:\Desenv\ReposGit\insesf\Site\bin\Uol.PagSeguro.xml
+C:\Desenv\ReposGit\insesf\Site\bin\CryptSharp.pdb
+C:\Desenv\ReposGit\insesf\Site\bin\CryptSharp.xml
+C:\Desenv\ReposGit\insesf\Site\bin\EntityFramework.xml
+C:\Desenv\ReposGit\insesf\Site\bin\EntityFramework.SqlServer.xml
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Helpers.xml
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Mvc.xml
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Optimization.xml
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.Razor.xml
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.WebPages.xml
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.WebPages.Deployment.xml
+C:\Desenv\ReposGit\insesf\Site\bin\System.Web.WebPages.Razor.xml
+C:\Desenv\ReposGit\insesf\Site\bin\Antlr3.Runtime.pdb
+C:\Desenv\ReposGit\insesf\Site\bin\Newtonsoft.Json.xml
+C:\Desenv\ReposGit\insesf\Site\bin\pt-br\System.Web.Mvc.resources.dll

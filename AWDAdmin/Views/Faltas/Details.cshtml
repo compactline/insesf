@@ -1,0 +1,50 @@
+﻿@model AWDAdmin.Models.Falta
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Falta</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Aluno.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Aluno.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Disciplina.Nome)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Disciplina.Nome)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Data)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Data)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

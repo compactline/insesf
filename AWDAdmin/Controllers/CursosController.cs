@@ -31,6 +31,9 @@ namespace AWDAdmin.Controllers
         // GET: Cursos/Create
         public ActionResult Create()
         {
+            ViewBag.Coordenador_Id = new SelectList(db.Coordenadores.ToList(), "ID", "Nome");
+            ViewBag.Professor_Id = new SelectList(db.Professores.ToList(), "ID", "Nome");
+            ViewBag.Area_Id = new SelectList(db.Areas.ToList(), "ID", "Nome");
             return View();
         }
 
@@ -39,7 +42,7 @@ namespace AWDAdmin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Codigo,Capa,Titulo,Descricao,Ementa,CargaHoraria,NomeProfessor,NomeCoordenador,Vagas,DataInicio,DataConclusao,Horario,InicioInscricao,FimInscricao,Local,Investimento,Valor")] Curso curso)
+        public ActionResult Create([Bind(Include = "ID,Codigo,Capa,Titulo,Descricao,Ementa,CargaHoraria,Vagas,DataInicio,DataConclusao,Horario,InicioInscricao,FimInscricao,Local,Investimento,Valor, Area_Id, Professor_Id, Coordenador_Id")] Curso curso)
         {
             if (ModelState.IsValid)
             {
@@ -53,6 +56,9 @@ namespace AWDAdmin.Controllers
                 ViewBag.Mensagem = "Não foi possível salvar os dados.";
             }
 
+            ViewBag.Coordenador_Id = new SelectList(db.Coordenadores.ToList(), "ID", "Nome");
+            ViewBag.Professor_Id = new SelectList(db.Professores.ToList(), "ID", "Nome");
+            ViewBag.Area_Id = new SelectList(db.Areas.ToList(), "ID", "Nome");
             return View(curso);
         }
 
@@ -68,6 +74,11 @@ namespace AWDAdmin.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.Coordenador_Id = new SelectList(db.Coordenadores.ToList(), "ID", "Nome",curso.Coordenador_Id);
+            ViewBag.Professor_Id = new SelectList(db.Professores.ToList(), "ID", "Nome",curso.Professor_Id);
+            ViewBag.Area_Id = new SelectList(db.Areas.ToList(), "ID", "Nome",curso.Area_Id);
+
             return View(curso);
         }
 
@@ -76,7 +87,7 @@ namespace AWDAdmin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Codigo,Capa,Titulo,Descricao,Ementa,CargaHoraria,NomeProfessor,NomeCoordenador,Vagas,DataInicio,DataConclusao,Horario,InicioInscricao,FimInscricao,Local,Investimento,Valor")] Curso curso)
+        public ActionResult Edit([Bind(Include = "ID,Codigo,Capa,Titulo,Descricao,Ementa,CargaHoraria,Vagas,DataInicio,DataConclusao,Horario,InicioInscricao,FimInscricao,Local,Investimento,Valor, Area_Id, Professor_Id, Coordenador_Id")] Curso curso)
         {
             if (ModelState.IsValid)
             {
@@ -89,6 +100,10 @@ namespace AWDAdmin.Controllers
             {
                 ViewBag.Mensagem = "Não foi possível salvar os dados.";
             }
+            ViewBag.Coordenador_Id = new SelectList(db.Coordenadores.ToList(), "ID", "Nome", curso.Coordenador_Id);
+            ViewBag.Professor_Id = new SelectList(db.Professores.ToList(), "ID", "Nome", curso.Professor_Id);
+            ViewBag.Area_Id = new SelectList(db.Areas.ToList(), "ID", "Nome", curso.Area_Id);
+
             return View(curso);
         }
 

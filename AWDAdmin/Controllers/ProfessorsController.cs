@@ -18,7 +18,7 @@ namespace AWDAdmin.Controllers
         // GET: Professors
         public ActionResult Index()
         {
-            var profesores = db.Profesores.Include(p => p.Pessoa);
+            var profesores = db.Professores.Include(p => p.Pessoa);
             return View(profesores.ToList());
         }
 
@@ -29,7 +29,7 @@ namespace AWDAdmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Professor professor = db.Profesores.Find(id);
+            Professor professor = db.Professores.Find(id);
             if (professor == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace AWDAdmin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Profesores.Add(professor);
+                db.Professores.Add(professor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -69,7 +69,7 @@ namespace AWDAdmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Professor professor = db.Profesores.Where(c => c.Pessoa.Id == id.Value).FirstOrDefault();
+            Professor professor = db.Professores.Where(c => c.Pessoa.Id == id.Value).FirstOrDefault();
             if (professor == null)
             {
                 professor = new Professor();
@@ -87,11 +87,11 @@ namespace AWDAdmin.Controllers
         public ActionResult Edit([Bind(Include = "Id,Curriculo, PessoaId")] Professor professor)
         {
 
-            Professor prof= db.Profesores.Find(professor.Id);
+            Professor prof= db.Professores.Find(professor.Id);
 
             if (prof == null)
             {
-                db.Profesores.Add(prof);
+                db.Professores.Add(prof);
                 db.SaveChanges();
             }
             else
@@ -116,7 +116,7 @@ namespace AWDAdmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Professor professor = db.Profesores.Find(id);
+            Professor professor = db.Professores.Find(id);
             if (professor == null)
             {
                 return HttpNotFound();
@@ -129,8 +129,8 @@ namespace AWDAdmin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Professor professor = db.Profesores.Find(id);
-            db.Profesores.Remove(professor);
+            Professor professor = db.Professores.Find(id);
+            db.Professores.Remove(professor);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

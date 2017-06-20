@@ -27,7 +27,7 @@ namespace AWDAdmin.Context
 
         public System.Data.Entity.DbSet<AWDAdmin.Models.Pessoa> Pessoas { get; set; }
 
-        public System.Data.Entity.DbSet<AWDAdmin.Models.Professor> Profesores { get; set; }
+        public System.Data.Entity.DbSet<AWDAdmin.Models.Professor> Professores { get; set; }
 
         public System.Data.Entity.DbSet<AWDAdmin.Models.Coordenador> Coordenadores{ get; set; }
 
@@ -39,6 +39,8 @@ namespace AWDAdmin.Context
 
         public System.Data.Entity.DbSet<AWDAdmin.Models.Disciplina> Disciplinas { get; set; }
 
+        public System.Data.Entity.DbSet<AWDAdmin.Models.Falta> Faltas { get; set; }
 
+        public System.Data.Entity.DbSet<AWDAdmin.Models.Nota> Notas { get; set; }
     }
 }
